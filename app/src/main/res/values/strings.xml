@@ -14,4 +14,6 @@
     <string name="baht_unit">฿</string>
     <string name="no_order_selected">No order selected</string>
 
+    <string name="loading">Loading...</string>
+
 </resources>
