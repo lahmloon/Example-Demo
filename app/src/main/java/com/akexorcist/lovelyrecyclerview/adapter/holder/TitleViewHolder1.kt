@@ -1,11 +1,11 @@
 package com.akexorcist.lovelyrecyclerview.adapter.holder
 
 import androidx.recyclerview.widget.RecyclerView
-import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem
+import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem1
 import com.akexorcist.lovelyrecyclerview.databinding.ViewTitleBinding
 
-class TitleViewHolder(private val binding: ViewTitleBinding) : RecyclerView.ViewHolder(binding.root) {
-    fun bind(item: OrderDetailItem.Title) {
+class TitleViewHolder1(private val binding: ViewTitleBinding) : RecyclerView.ViewHolder(binding.root) {
+    fun bind(item: OrderDetailItem1.Title) {
         binding.tvTitle.text = item.title
     }
 }

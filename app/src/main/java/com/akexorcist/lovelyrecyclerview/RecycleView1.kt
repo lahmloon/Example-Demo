@@ -7,30 +7,22 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.akexorcist.lovelyrecyclerview.adapter.OrderDetailAdapter
-import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem
+import com.akexorcist.lovelyrecyclerview.adapter.OrderDetailAdapter1
+import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem1
 import com.akexorcist.lovelyrecyclerview.databinding.ActivityRecycleView1Binding
-import com.akexorcist.lovelyrecyclerview.network.FakeNetwork
-import com.akexorcist.lovelyrecyclerview.network.response.OrderDetail
-import com.akexorcist.lovelyrecyclerview.util.OrderDetailConverter
-import com.akexorcist.lovelyrecyclerview.util.OrderDetailDiffCallback
+import com.akexorcist.lovelyrecyclerview.network.FakeNetwork1
+import com.akexorcist.lovelyrecyclerview.network.response.OrderDetail1
+import com.akexorcist.lovelyrecyclerview.util.OrderDetailConverter1
+import com.akexorcist.lovelyrecyclerview.util.OrderDetailDiffCallback1
 import com.akexorcist.lovelyrecyclerview.view.TransparentProgressDialog
 import com.google.gson.Gson
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import kotlin.coroutines.CoroutineContext
 
-class RecycleView1 : AppCompatActivity(), CoroutineScope {
-
-    override val coroutineContext: CoroutineContext
-        get() = Dispatchers.Main + SupervisorJob()
-
+class RecycleView1 : AppCompatActivity() {
     private val binding: ActivityRecycleView1Binding by lazy { ActivityRecycleView1Binding.inflate(layoutInflater) }
 
-    private lateinit var adapter: OrderDetailAdapter
+    private lateinit var adapter: OrderDetailAdapter1
 
-    private var orderDetail: OrderDetail? = null
+    private var orderDetail: OrderDetail1? = null
 
     private var dialog: TransparentProgressDialog? = null
 
@@ -43,20 +35,20 @@ class RecycleView1 : AppCompatActivity(), CoroutineScope {
     }
 
     private fun setupView() {
-        adapter = OrderDetailAdapter(onPositiveButtonClicked, onNegativeButtonClicked, onOrderRemoveClicked)
+        adapter = OrderDetailAdapter1(onPositiveButtonClicked, onNegativeButtonClicked, onOrderRemoveClicked)
         binding.rvOrderDetail.layoutManager = LinearLayoutManager(this)
         binding.rvOrderDetail.adapter = adapter
     }
 
     private fun loadOrderDetail() {
-        FakeNetwork.getFakeOrderDetail { orderDetail ->
+        FakeNetwork1.getFakeOrderDetail { orderDetail ->
             this.orderDetail = orderDetail
             val convertedItems = convertToOrderDetailItems(orderDetail)
             updateOrderDetailItems(listOf(), convertedItems)
         }
     }
 
-    private fun convertToOrderDetailItems(orderDetail: OrderDetail): List<OrderDetailItem> {
+    private fun convertToOrderDetailItems(orderDetail: OrderDetail1): List<OrderDetailItem1> {
         val name = "Sleeping For Less"
         val title = getString(R.string.your_order)
         val summaryTitle = getString(R.string.summary)
@@ -71,36 +63,36 @@ class RecycleView1 : AppCompatActivity(), CoroutineScope {
         val musicTitleColor = ContextCompat.getColor(this, R.color.natural_green)
 
         return if (isOrderDetailAvailable(orderDetail)) {
-            mutableListOf<OrderDetailItem>().apply {
-                add(OrderDetailConverter.createUserDetail(name))
-                add(OrderDetailConverter.createTitle(title))
-                addAll(OrderDetailConverter.createSectionAndOrder(orderDetail, foodTitle, bookTitle, musicTitle, currency, foodTitleColor, bookTitleColor, musicTitleColor))
-                add(OrderDetailConverter.createTitle(summaryTitle))
-                addAll(OrderDetailConverter.createSummary(orderDetail, foodTitle, bookTitle, musicTitle, currency))
-                add(OrderDetailConverter.createTotal(orderDetail, currency))
-                add(OrderDetailConverter.createNotice())
-                add(OrderDetailConverter.createButton())
+            mutableListOf<OrderDetailItem1>().apply {
+                add(OrderDetailConverter1.createUserDetail(name))
+                add(OrderDetailConverter1.createTitle(title))
+                addAll(OrderDetailConverter1.createSectionAndOrder(orderDetail, foodTitle, bookTitle, musicTitle, currency, foodTitleColor, bookTitleColor, musicTitleColor))
+                add(OrderDetailConverter1.createTitle(summaryTitle))
+                addAll(OrderDetailConverter1.createSummary(orderDetail, foodTitle, bookTitle, musicTitle, currency))
+                add(OrderDetailConverter1.createTotal(orderDetail, currency))
+                add(OrderDetailConverter1.createNotice())
+                add(OrderDetailConverter1.createButton())
             }
         } else {
-            mutableListOf<OrderDetailItem>().apply {
-                add(OrderDetailConverter.createUserDetail(name))
-                add(OrderDetailConverter.createTitle(title))
-                add(OrderDetailConverter.createNoOrder())
-                add(OrderDetailConverter.createTitle(summaryTitle))
-                add(OrderDetailConverter.createTotal(orderDetail, currency))
+            mutableListOf<OrderDetailItem1>().apply {
+                add(OrderDetailConverter1.createUserDetail(name))
+                add(OrderDetailConverter1.createTitle(title))
+                add(OrderDetailConverter1.createNoOrder())
+                add(OrderDetailConverter1.createTitle(summaryTitle))
+                add(OrderDetailConverter1.createTotal(orderDetail, currency))
             }
         }
     }
 
-    private fun isOrderDetailAvailable(orderDetail: OrderDetail): Boolean {
+    private fun isOrderDetailAvailable(orderDetail: OrderDetail1): Boolean {
         return orderDetail.foodList?.isNotEmpty() == true ||
                 orderDetail.bookList?.isNotEmpty() == true ||
                 orderDetail.musicList?.isNotEmpty() == true
     }
 
-    private fun updateOrderDetailItems(oldItems: List<OrderDetailItem>, newItems: List<OrderDetailItem>) {
+    private fun updateOrderDetailItems(oldItems: List<OrderDetailItem1>, newItems: List<OrderDetailItem1>) {
         adapter.orderDetailItems = newItems
-        DiffUtil.calculateDiff(OrderDetailDiffCallback(oldItems, newItems))
+        DiffUtil.calculateDiff(OrderDetailDiffCallback1(oldItems, newItems))
                 .dispatchUpdatesTo(adapter)
         dismissLoadingView()
     }
@@ -113,10 +105,10 @@ class RecycleView1 : AppCompatActivity(), CoroutineScope {
         Toast.makeText(this, "Negative button clicked", Toast.LENGTH_SHORT).show()
     }
 
-    private val onOrderRemoveClicked: (OrderDetailItem.Order) -> Unit = { item ->
+    private val onOrderRemoveClicked: (OrderDetailItem1.Order) -> Unit = { item ->
         orderDetail?.let { oldItems ->
             val gson = Gson()
-            val newItems = gson.fromJson(gson.toJson(oldItems), OrderDetail::class.java)
+            val newItems = gson.fromJson(gson.toJson(oldItems), OrderDetail1::class.java)
             newItems.foodList?.removeAll { it.orderName == item.name && "x${it.amount}" == item.detail }
             newItems.bookList?.removeAll { it.bookName == item.name && it.author == item.detail }
             newItems.musicList?.removeAll { it.album == item.name && it.artist == item.detail }

@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 
 @Keep
 @Parcelize
-data class OrderDetail(
+data class OrderDetail1(
     @SerializedName("food_list")
     val foodList: MutableList<Food>?,
     @SerializedName("book_list")

@@ -3,7 +3,6 @@ package com.akexorcist.lovelyrecyclerview
 import android.content.Intent
 import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.akexorcist.lovelyrecyclerview.databinding.ActivityMainBinding
 
@@ -19,17 +18,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupView() {
         binding.button1.setOnClickListener {
-            intent("Intent Button1", RecycleView1::class.java)
+            val intent = Intent(this, RecycleView1::class.java).apply {
+                putExtra(EXTRA_MESSAGE, "Intent Button1")
+            }
+            startActivity(intent)
         }
         binding.button2.setOnClickListener {
-            intent("Intent Button2", RecycleView1::class.java)
+            val intent = Intent(this, RecycleView2::class.java).apply {
+                putExtra(EXTRA_MESSAGE, "Intent Button2")
+            }
+            startActivity(intent)
         }
-    }
-
-    private fun intent(message : String, gotoActivity : Class<RecycleView1>) {
-        val intent = Intent(this, gotoActivity).apply {
-            putExtra(EXTRA_MESSAGE, message)
-        }
-        startActivity(intent)
     }
 }
