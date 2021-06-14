@@ -18,7 +18,7 @@ import com.akexorcist.lovelyrecyclerview.databinding.ViewButtonBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewEmptyBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewNoOrderBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewNoticeBinding
-import com.akexorcist.lovelyrecyclerview.databinding.ViewOrderBinding
+import com.akexorcist.lovelyrecyclerview.databinding.ViewOrder1Binding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewSectionBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewSummaryBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewTitleBinding
@@ -40,7 +40,7 @@ class OrderDetailAdapter1(
         OrderDetailType.TYPE_SECTION ->
             SectionViewHolder(ViewSectionBinding.inflate(LayoutInflater.from(parent.context), parent, false))
         OrderDetailType.TYPE_ORDER ->
-            OrderViewHolder1(ViewOrderBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+            OrderViewHolder1(ViewOrder1Binding.inflate(LayoutInflater.from(parent.context), parent, false))
         OrderDetailType.TYPE_SUMMARY ->
             SummaryViewHolder(ViewSummaryBinding.inflate(LayoutInflater.from(parent.context), parent, false))
         OrderDetailType.TYPE_TOTAL ->

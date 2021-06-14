@@ -28,7 +28,8 @@ object OrderDetailConverter2 {
                             OrderDetailItem2.Order(
                                     name = mars.id,
                                     detail = "x${mars.type}",
-                                    price = "${mars.price}$currency"
+                                    price = "${mars.price}$currency",
+                                    img = mars.imgSrcUrl
                             )
                         })
             }

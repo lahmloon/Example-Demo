@@ -20,7 +20,8 @@ sealed class OrderDetailItem2(val type: Int) : Parcelable {
     data class Order(
         val name: String,
         val detail: String,
-        val price: String
+        val price: String,
+        val img: String
     ) : OrderDetailItem2(OrderDetailType.TYPE_ORDER)
 
     @Parcelize

@@ -7,7 +7,7 @@ import com.akexorcist.lovelyrecyclerview.adapter.holder.*
 import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem2
 import com.akexorcist.lovelyrecyclerview.databinding.ViewEmptyBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewNoOrderBinding
-import com.akexorcist.lovelyrecyclerview.databinding.ViewOrderBinding
+import com.akexorcist.lovelyrecyclerview.databinding.ViewOrder2Binding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewSectionBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewTitleBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewUserDetailBinding
@@ -23,7 +23,7 @@ class OrderDetailAdapter2(
         OrderDetailType.TYPE_TITLE ->
             TitleViewHolder2(ViewTitleBinding.inflate(LayoutInflater.from(parent.context), parent, false))
         OrderDetailType.TYPE_ORDER ->
-            OrderViewHolder2(ViewOrderBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+            OrderViewHolder2(ViewOrder2Binding.inflate(LayoutInflater.from(parent.context), parent, false))
         OrderDetailType.TYPE_EMPTY ->
             EmptyViewHolder(ViewEmptyBinding.inflate(LayoutInflater.from(parent.context), parent, false))
         OrderDetailType.TYPE_NO_ORDER ->
