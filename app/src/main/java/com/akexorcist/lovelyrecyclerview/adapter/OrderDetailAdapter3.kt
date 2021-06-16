@@ -12,9 +12,9 @@ import kotlinx.android.synthetic.main.recyclerview_row.view.*
 
 class OrderDetailAdapter3: RecyclerView.Adapter<OrderDetailAdapter3.MyViewHolder>()  {
 
-    var items = ArrayList<OrderDetailItem3>()
+    var items = ArrayList<OrderDetailItem3.OrderDetailItem3>()
 
-    fun setListData(data: ArrayList<OrderDetailItem3>) {
+    fun setListData(data: ArrayList<OrderDetailItem3.OrderDetailItem3>) {
         this.items = data
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderDetailAdapter3.MyViewHolder {
@@ -37,7 +37,7 @@ class OrderDetailAdapter3: RecyclerView.Adapter<OrderDetailAdapter3.MyViewHolder
         val tvDesc = view.tvDesc
         val imageThumb = view.imageThumb
 
-        fun bind(data: OrderDetailItem3) {
+        fun bind(data: OrderDetailItem3.OrderDetailItem3) {
             tvTitle.text = data.name
             if(!TextUtils.isEmpty(data.description)) {
                 tvDesc.text = data.description
