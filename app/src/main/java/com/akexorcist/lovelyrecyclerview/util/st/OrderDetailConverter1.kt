@@ -1,4 +1,4 @@
-package com.akexorcist.lovelyrecyclerview.util
+package com.akexorcist.lovelyrecyclerview.util.st
 
 import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem1
 import com.akexorcist.lovelyrecyclerview.network.response.OrderDetail1

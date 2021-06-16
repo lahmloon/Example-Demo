@@ -3,7 +3,6 @@ package com.akexorcist.lovelyrecyclerview
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akexorcist.lovelyrecyclerview.adapter.OrderDetailAdapter2
@@ -11,10 +10,9 @@ import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem2
 import com.akexorcist.lovelyrecyclerview.databinding.ActivityRecycleView1Binding
 import com.akexorcist.lovelyrecyclerview.network.FakeNetwork2
 import com.akexorcist.lovelyrecyclerview.network.response.OrderDetail2
-import com.akexorcist.lovelyrecyclerview.util.OrderDetailConverter2
-import com.akexorcist.lovelyrecyclerview.util.OrderDetailDiffCallback2
+import com.akexorcist.lovelyrecyclerview.util.nd.OrderDetailConverter2
+import com.akexorcist.lovelyrecyclerview.util.nd.OrderDetailDiffCallback2
 import com.akexorcist.lovelyrecyclerview.view.TransparentProgressDialog
-import com.bumptech.glide.Glide
 import com.google.gson.Gson
 
 class RecycleView2 : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.akexorcist.lovelyrecyclerview.adapter.holder
+package com.akexorcist.lovelyrecyclerview.adapter.holder.st
 
 import androidx.recyclerview.widget.RecyclerView
 import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem1

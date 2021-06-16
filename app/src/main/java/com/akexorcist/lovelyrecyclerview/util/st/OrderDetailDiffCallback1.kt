@@ -1,11 +1,11 @@
-package com.akexorcist.lovelyrecyclerview.util
+package com.akexorcist.lovelyrecyclerview.util.st
 
 import androidx.recyclerview.widget.DiffUtil
-import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem2
+import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem1
 
-class OrderDetailDiffCallback2(
-        private val oldItems: List<OrderDetailItem2>?,
-        private val newItems: List<OrderDetailItem2>?
+class OrderDetailDiffCallback1(
+        private val oldItems: List<OrderDetailItem1>?,
+        private val newItems: List<OrderDetailItem1>?
 ) : DiffUtil.Callback() {
 
     override fun getOldListSize(): Int = oldItems?.size ?: 0

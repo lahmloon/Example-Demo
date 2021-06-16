@@ -7,12 +7,12 @@ import com.akexorcist.lovelyrecyclerview.adapter.holder.ButtonViewHolder
 import com.akexorcist.lovelyrecyclerview.adapter.holder.EmptyViewHolder
 import com.akexorcist.lovelyrecyclerview.adapter.holder.NoOrderViewHolder
 import com.akexorcist.lovelyrecyclerview.adapter.holder.NoticeViewHolder
-import com.akexorcist.lovelyrecyclerview.adapter.holder.OrderViewHolder1
+import com.akexorcist.lovelyrecyclerview.adapter.holder.st.OrderViewHolder1
 import com.akexorcist.lovelyrecyclerview.adapter.holder.SectionViewHolder
 import com.akexorcist.lovelyrecyclerview.adapter.holder.SummaryViewHolder
-import com.akexorcist.lovelyrecyclerview.adapter.holder.TitleViewHolder1
+import com.akexorcist.lovelyrecyclerview.adapter.holder.st.TitleViewHolder1
 import com.akexorcist.lovelyrecyclerview.adapter.holder.TotalViewHolder
-import com.akexorcist.lovelyrecyclerview.adapter.holder.UserDetailViewHolder1
+import com.akexorcist.lovelyrecyclerview.adapter.holder.st.UserDetailViewHolder1
 import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem1
 import com.akexorcist.lovelyrecyclerview.databinding.ViewButtonBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewEmptyBinding

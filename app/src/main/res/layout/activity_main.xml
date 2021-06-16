@@ -22,7 +22,7 @@
                 android:id="@+id/button1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button"
+                android:text="First"
                 tools:layout_editor_absoluteX="161dp"
                 tools:layout_editor_absoluteY="341dp" />
 
@@ -30,7 +30,15 @@
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Button"
+                android:text="Second"
+                tools:layout_editor_absoluteX="161dp"
+                tools:layout_editor_absoluteY="341dp" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Third"
                 tools:layout_editor_absoluteX="161dp"
                 tools:layout_editor_absoluteY="341dp" />
         </LinearLayout>

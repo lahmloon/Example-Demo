@@ -4,11 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.akexorcist.lovelyrecyclerview.adapter.holder.*
+import com.akexorcist.lovelyrecyclerview.adapter.holder.nd.OrderViewHolder2
+import com.akexorcist.lovelyrecyclerview.adapter.holder.nd.TitleViewHolder2
+import com.akexorcist.lovelyrecyclerview.adapter.holder.nd.UserDetailViewHolder2
 import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem2
 import com.akexorcist.lovelyrecyclerview.databinding.ViewEmptyBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewNoOrderBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewOrder2Binding
-import com.akexorcist.lovelyrecyclerview.databinding.ViewSectionBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewTitleBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ViewUserDetailBinding
 

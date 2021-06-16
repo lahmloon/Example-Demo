@@ -12,8 +12,8 @@ import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem1
 import com.akexorcist.lovelyrecyclerview.databinding.ActivityRecycleView1Binding
 import com.akexorcist.lovelyrecyclerview.network.FakeNetwork1
 import com.akexorcist.lovelyrecyclerview.network.response.OrderDetail1
-import com.akexorcist.lovelyrecyclerview.util.OrderDetailConverter1
-import com.akexorcist.lovelyrecyclerview.util.OrderDetailDiffCallback1
+import com.akexorcist.lovelyrecyclerview.util.st.OrderDetailConverter1
+import com.akexorcist.lovelyrecyclerview.util.st.OrderDetailDiffCallback1
 import com.akexorcist.lovelyrecyclerview.view.TransparentProgressDialog
 import com.google.gson.Gson
 
