@@ -4,10 +4,10 @@ import android.os.Parcelable
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.Json
-import kotlinx.parcelize.Parcelize
+//import kotlinx.parcelize.Parcelize
 
 @Keep
-@Parcelize
+//@Parcelize
 data class Mars(
         @SerializedName("price")
         val price: Int,
@@ -19,4 +19,4 @@ data class Mars(
         @Json(name = "img_src")
         val imgSrcUrl: String
 
-) : Parcelable
+)

@@ -3,10 +3,10 @@ package com.akexorcist.lovelyrecyclerview.network.response
 import android.os.Parcelable
 import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
+//import kotlinx.parcelize.Parcelize
 
 @Keep
-@Parcelize
+//@Parcelize
 data class Book(
     @SerializedName("ISBN")
     val isbn: String,
@@ -17,4 +17,4 @@ data class Book(
     val publication: String,
     val price: Int,
     val pages: Int,
-) : Parcelable
+)

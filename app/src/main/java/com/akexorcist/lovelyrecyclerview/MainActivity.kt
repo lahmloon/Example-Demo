@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.button3.setOnClickListener {
-            val intent = Intent(this, RecycleView3::class.java).apply {
+            val intent = Intent(this, RecyclerViewActivity::class.java).apply {
                 putExtra(EXTRA_MESSAGE, "Intent Button3")
             }
             startActivity(intent)

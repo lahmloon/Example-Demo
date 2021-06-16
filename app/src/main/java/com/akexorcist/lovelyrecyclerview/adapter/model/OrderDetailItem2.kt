@@ -2,21 +2,21 @@ package com.akexorcist.lovelyrecyclerview.adapter.model
 
 import android.os.Parcelable
 import com.akexorcist.lovelyrecyclerview.adapter.OrderDetailType
-import kotlinx.parcelize.Parcelize
+//import kotlinx.parcelize.Parcelize
 
-sealed class OrderDetailItem2(val type: Int) : Parcelable {
+sealed class OrderDetailItem2(val type: Int) {
 
-    @Parcelize
+//    @Parcelize
     data class UserDetail(
             val name: String
     ) : OrderDetailItem2(OrderDetailType.TYPE_USER_DETAIL)
 
-    @Parcelize
+//    @Parcelize
     data class Title(
             val title: String
     ) : OrderDetailItem2(OrderDetailType.TYPE_TITLE)
 
-    @Parcelize
+//    @Parcelize
     data class Order(
         val name: String,
         val detail: String,
@@ -24,9 +24,9 @@ sealed class OrderDetailItem2(val type: Int) : Parcelable {
         val img: String
     ) : OrderDetailItem2(OrderDetailType.TYPE_ORDER)
 
-    @Parcelize
+//    @Parcelize
     object Empty : OrderDetailItem2(OrderDetailType.TYPE_EMPTY)
 
-    @Parcelize
+//    @Parcelize
     object NoOrder : OrderDetailItem2(OrderDetailType.TYPE_NO_ORDER)
 }
