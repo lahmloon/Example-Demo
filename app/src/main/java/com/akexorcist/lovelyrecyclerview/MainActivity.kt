@@ -35,5 +35,11 @@ class MainActivity : AppCompatActivity() {
             }
             startActivity(intent)
         }
+        binding.button4.setOnClickListener {
+            val intent = Intent(this, Occupations::class.java).apply {
+                putExtra(EXTRA_MESSAGE, "Intent Button4")
+            }
+            startActivity(intent)
+        }
     }
 }

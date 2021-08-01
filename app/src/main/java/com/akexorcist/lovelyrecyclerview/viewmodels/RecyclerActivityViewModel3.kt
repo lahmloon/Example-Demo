@@ -1,4 +1,4 @@
-package com.demo.myfirstapp.viewmodels
+package com.akexorcist.lovelyrecyclerview.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

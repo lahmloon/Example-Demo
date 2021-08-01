@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager.VERTICAL
 import com.akexorcist.lovelyrecyclerview.adapter.OrderDetailAdapter3
 import com.akexorcist.lovelyrecyclerview.adapter.model.OrderDetailItem3
-import com.demo.myfirstapp.viewmodels.RecyclerActivityViewModel3
+import com.akexorcist.lovelyrecyclerview.viewmodels.RecyclerActivityViewModel3
 import kotlinx.android.synthetic.main.activity_recycle_view3.*
 
 
@@ -38,7 +38,8 @@ class RecycleView3 : AppCompatActivity() {
 
 
     private fun createData() {
-        @Suppress("DEPRECATION") val viewModel = ViewModelProviders.of(this).get(RecyclerActivityViewModel3::class.java)
+        @Suppress("DEPRECATION") val viewModel = ViewModelProviders.of(this).get(
+            RecyclerActivityViewModel3::class.java)
         viewModel.getRecyclerListDataObserver().observe(this, Observer<OrderDetailItem3.RecyclerList>{
 
             if(it != null) {
