@@ -2,6 +2,7 @@ package com.akexorcist.lovelyrecyclerview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.widget.doAfterTextChanged
@@ -9,10 +10,14 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akexorcist.lovelyrecyclerview.adapter.OccupationListAdapter
-import com.akexorcist.lovelyrecyclerview.databinding.ActivityMainBinding
 import com.akexorcist.lovelyrecyclerview.databinding.ActivityOccupationsBinding
+import com.akexorcist.lovelyrecyclerview.util.OccupationsUtils
+import com.akexorcist.lovelyrecyclerview.util.PostcodeUtils
 import com.akexorcist.lovelyrecyclerview.viewmodels.OccupationsViewModel
 import com.lahmloon.occupations_isic_code_sdk.occupations.data.Occupations
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 
 class Occupations : AppCompatActivity() {
 
@@ -29,6 +34,11 @@ class Occupations : AppCompatActivity() {
         setupList()
 
         model.occupations.observe(this, Observer { listAdapter.occupations = it })
+
+        CoroutineScope(Dispatchers.IO).async {
+            val postCodeObjectSuspend = PostcodeUtils.getPostCode(this@Occupations, "จอมพระ", "สุรินทร์")
+            Log.d("postCodeObj", (postCodeObjectSuspend ?: "ไม่มีข้อมุล") as String)
+        }
     }
 
     private fun onOccupationClicked(occupations: Occupations) {

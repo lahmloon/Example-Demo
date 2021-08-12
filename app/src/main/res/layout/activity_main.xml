@@ -22,7 +22,7 @@
                 android:id="@+id/button1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="First"
+                android:text="Recycler Multi"
                 tools:layout_editor_absoluteX="161dp"
                 tools:layout_editor_absoluteY="341dp" />
 
@@ -30,7 +30,7 @@
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Second"
+                android:text="Recycler"
                 tools:layout_editor_absoluteX="161dp"
                 tools:layout_editor_absoluteY="341dp" />
 
@@ -38,7 +38,7 @@
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Third"
+                android:text="Github"
                 tools:layout_editor_absoluteX="161dp"
                 tools:layout_editor_absoluteY="341dp" />
 

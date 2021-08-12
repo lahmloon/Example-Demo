@@ -80,4 +80,6 @@ dependencies {
 
     // country-codes
     implementation 'com.neovisionaries:nv-i18n:1.27'
+//
+    implementation 'com.gundamd.thai_postcode_sdk:thai-postcode-sdk:1.0.0-1603711543'
 }
